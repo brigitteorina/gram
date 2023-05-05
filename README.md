@@ -10,13 +10,6 @@ Install the necessary dependencies:
 cd mithigram
 npm install
 
-Start the development server:
-npm start
-
-The application should now be running on http://localhost:3000/.
-
-Usage
-Once the application is running, you can use it as follows:
 
 Register or log in to your account.
 View your feed to see posts from other users.
