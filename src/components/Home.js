@@ -21,7 +21,7 @@ function Home() {
       const response = await promise.json();
      return response;
     }
-    getDetails("http://localhost:4000/users").then((data) => {
+    getDetails("https://my-json-server.typicode.com/brigitteorina/My-json-file/users").then((data) => {
       setUsers(data);
     });
 

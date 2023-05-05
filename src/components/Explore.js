@@ -5,7 +5,7 @@ function Explore() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    getImages("http://localhost:4000/users").then((resp) => {
+    getImages("https://my-json-server.typicode.com/brigitteorina/My-json-file/users").then((resp) => {
       const imageArr = resp.map((user) => {
         return user.postAddress.map((post) => post.imgAddress);
       });
