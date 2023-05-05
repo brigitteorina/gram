@@ -37,6 +37,23 @@ function Home() {
       setData(res);
     });
   }, []);
-  
+  function handleSearch(search) {
+    setSearch(search);
+  }
+  const displayedPosts = users.filter((user) =>
+    user.userName.toLowerCase().includes(search.toLowerCase())
+  );
+
+  return (
+    <div className="home-main">
+      <Navbar handleSearch={handleSearch} />
+      {data.url && <img src={data.url} alt={data.slug} />}
+      <Stories />
+      <div className="card-section">
+        <Card users={displayedPosts} />
+      </div>
+    </div>
+  );
+}
 
 export default Home;
