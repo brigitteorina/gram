@@ -1,10 +1,5 @@
 Mithigram is an Instagram-like web application created by Brigitte Orina using React. The application allows users to like and comment on posts, as well as view past posts on the platform.
 
-Installation
-To set up the environment to run this application, follow these steps:
-
-Clone the repository to your local machine:
-git clone https://github.com/brigitteorina/mithigram.git
 
 Install the necessary dependencies:
 cd mithigram
