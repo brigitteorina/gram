@@ -1,4 +1,17 @@
 import React from "react";
+function Card({ users }) {
+  function patchLikes(e, userId, postId, user) {
+    addLikes(`http://localhost:4000/users/${userId}`).then((resp) => {
+      console.log(resp);
+      // eslint-disable-next-line
+      user.postAddress.map((requiredPost) => {
+        if (`${requiredPost.id}likes` === postId) {
+          document.getElementById(
+            postId
+          ).textContent = `${requiredPost.likes} likes`;
+          e.target.style.color = "red";
+        }
+      });
 
 
     });
@@ -23,22 +36,7 @@ import React from "react";
       return response;
     }
   }
-  function handleComments(userId, postId, commentDiv, user) {
-    const inputComment = document.getElementById(postId).value;
-    const commentsContainer = document.getElementById(commentDiv);
-    addComments(`http://localhost:4000/users/${userId}`).then((resp) => {
-      // eslint-disable-next-line
-      user.postAddress.map((requiredPost) => {
-        if (`${requiredPost.id}comment` === postId) {
-          const commentsLength = requiredPost.comments.length;
-          const newComment = document.createElement("p");
-          newComment.className = "comment";
-          newComment.textContent = requiredPost.comments[commentsLength - 1];
-          commentsContainer.appendChild(newComment);
-          document.getElementById(postId).value = "";
-        }
-      });
-    });
+ 
     async function addComments(url) {
       const promise = await fetch(url, {
         method: "PATCH",
