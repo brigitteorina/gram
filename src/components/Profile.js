@@ -14,7 +14,24 @@ function Profile() {
     }
     document.getElementById("searchBar").disabled = true;
   }, []);
-  
+  const renderUsers = users.map((user, index) => {
+    return (
+      <div className="profile-container" key={index}>
+        <div className="profile-picture">
+          <img src={user.profileImg} alt="profile pic" />
+        </div>
+        <div className="profile-name">{user.userName}</div>
+        <div className="follow-container">
+          <div className="followers-container">
+            <div className="followers-title">Followers</div>
+            <div className="followers">{user.followers}</div>
+          </div>
+          <div className="following-container">
+            <div className="following-title">Following</div>
+            <div className="following">{user.following}</div>
+          </div>
+        </div>
+      </div>
     );
   });
   return (
