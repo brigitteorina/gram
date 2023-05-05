@@ -26,7 +26,7 @@ function Home() {
     });
 
     const getGiphy = async () => {
-      const promise = await fetch("https://api.quotable.io/random");
+      const promise = await fetch("https://api.giphy.com/v1/gifs/random?api_key=4Azu3zKqWxAkpdActoiM04XyEP5QDAo1&tag=&rating=g");
       
       const response = await promise.json();
        console.log(response.data);
