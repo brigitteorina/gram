@@ -1,18 +1,6 @@
 import React from "react";
 
-function Card({ users }) {
-  function patchLikes(e, userId, postId, user) {
-    addLikes(`http://localhost:4000/users/${userId}`).then((resp) => {
-      console.log(resp);
-      // eslint-disable-next-line
-      user.postAddress.map((requiredPost) => {
-        if (`${requiredPost.id}likes` === postId) {
-          document.getElementById(
-            postId
-          ).textContent = `${requiredPost.likes} likes`;
-          e.target.style.color = "red";
-        }
-      });
+
     });
     async function addLikes(url) {
       const promise = await fetch(url, {
