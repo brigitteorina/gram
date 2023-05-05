@@ -1,5 +1,4 @@
 import React from "react";
-
 function Card({ users }) {
   function patchLikes(e, userId, postId, user) {
     addLikes(`http://localhost:4000/users/${userId}`).then((resp) => {
@@ -13,6 +12,8 @@ function Card({ users }) {
           e.target.style.color = "red";
         }
       });
+
+
     });
     async function addLikes(url) {
       const promise = await fetch(url, {
@@ -35,6 +36,7 @@ function Card({ users }) {
       return response;
     }
   }
+ 
   function handleComments(userId, postId, commentDiv, user) {
     const inputComment = document.getElementById(postId).value;
     const commentsContainer = document.getElementById(commentDiv);
